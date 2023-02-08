@@ -2,7 +2,7 @@
 //estado de las tareas.
 
 //no se que esta pasando aqui
-import { children, createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 
 //este objeto lo voy a poder importar y exportar
 const TaskContext = createContext(); // es el que tienen los datos
@@ -16,7 +16,12 @@ export const useTask = () => { //esta funcion siver para no tener que importar e
 
 //se exporta el TaskProvider una funcion que contiene a otros
 export const TaskProvider = ({children}) => { //cualquier componente que me pasen al task provider puede acceder a las otras lineas de código
-   return<TaskContext.Provider>{children}</TaskContext.Provider>; //cualquier componente hijo va acceder a la variable que esta dentro de las llaves
+
+    let hello = 'World'
+
+    const greet = name => `Hello ${name}`
+   
+    return<TaskContext.Provider>{children}</TaskContext.Provider>; //cualquier componente hijo va acceder a la variable que esta dentro de las llaves
 };
 
 //¿Que hace el task provider?
