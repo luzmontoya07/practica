@@ -9,6 +9,7 @@ const TaskContext = createContext(); // es el que tienen los datos
 
 export const useTask = () => { //esta funcion siver para no tener que importar el use context en cada componente que que quirea actualizar
   const context  =   useContext(TaskContext)
+  return context
 }
 
 
