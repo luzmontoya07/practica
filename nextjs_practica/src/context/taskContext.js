@@ -7,13 +7,15 @@ import { children, createContext } from "react";
 //este objeto lo voy a poder importar y exportar
 const TaskContext = createContext(); // es el que tienen los datos
 
+export const useTask = () => {   //esta funcion siver para no tener que importar el use context en cada componente que que quirea actualizar
+    
+}
+
+
 
 //se exporta el TaskProvider una funcion que contiene a otros
 export const TaskProvider = ({children}) => { //cualquier componente que me pasen al task provider puede acceder a las otras lineas de código
-
-    let hello = 'world'
-
-    return <TaskContext.Provider value={{hello}}>{children}</TaskContext.Provider>; //cualquier componente hijo va acceder a la variable que esta dentro de las llaves
+    return <TaskContext.Provider>{children}</TaskContext.Provider>; //cualquier componente hijo va acceder a la variable que esta dentro de las llaves
 };
 
 //¿Que hace el task provider?
