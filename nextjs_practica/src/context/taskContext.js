@@ -2,13 +2,13 @@
 //estado de las tareas.
 
 //
-import { children, createContext } from "react";
+import { children, createContext, useContext } from "react";
 
 //este objeto lo voy a poder importar y exportar
 const TaskContext = createContext(); // es el que tienen los datos
 
-export const useTask = () => {   //esta funcion siver para no tener que importar el use context en cada componente que que quirea actualizar
-    
+export const useTask = () => { //esta funcion siver para no tener que importar el use context en cada componente que que quirea actualizar
+  const context  =   useContext(TaskContext)
 }
 
 
