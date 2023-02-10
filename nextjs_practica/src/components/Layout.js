@@ -28,7 +28,7 @@ const Layout = ({children}) => {
         </div>
         </header>
 
-        <main className="px-28">
+        <main className="px-28 py-10">
         {children}
         </main>
 

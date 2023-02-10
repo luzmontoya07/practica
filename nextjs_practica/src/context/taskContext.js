@@ -14,16 +14,23 @@ export const useTask = () => useContext(TaskContext);
 
 export const TaskProvider = ({children}) =>{
 
-  const [tasks, setTasks] = useState([{id: '1', title: 'first task', description:'some task'}]); //variable para guardar datos y alterar datos
+  const [tasks, setTasks] = useState([{id: '1', titulo: 'first task', descripcion:'some task'}]); //variable para guardar datos y alterar datos
 
-
-  const createTask = (titulo, descripcion) => {
+  
+  
+//Función para crear una tarea...
+  const createTask = (titulo, descripcion) => 
     setTasks([...tasks, {titulo, descripcion, id: uuid()}])
-  }
+  
+
+  //Función para actualizar la tarea...
+  const updateTask = (id, taskActualizada) => 
+    setTasks ([...tasks.map(task => task.id === id ? {...task, ...taskActualizada} : task)]);
+  
 
 
   return(
-    <TaskContext.Provider value={{tasks, createTask}}>{children}</TaskContext.Provider>
+    <TaskContext.Provider value={{tasks, createTask, updateTask}}>{children}</TaskContext.Provider>
 
   );
 };
